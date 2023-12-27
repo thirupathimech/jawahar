@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Viewer with Toolbar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 70px 20px 20px 20px;
+        }
+
+        #toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .container {
+            display: flex;
+            margin-top: 50px;
+        }
+
+        #codeInput,
+        #output {
+            width: 50%;
+            height: calc(100vh - 70px);
+        }
+
+        #codeInput {
+            margin-right: 10px;
+            position: relative;
+            display: flex;
+        }
+
+        .line-numbers {
+            width: 30px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            pointer-events: none;
+        }
+
+        .line-numbers span {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .code-area {
+            flex: 1;
+        }
+
+        #codeTextArea {
+            font-family: Monaco, Menlo, "Ubuntu Mono", monospace;
+            width: 100%;
+            height: calc(100% - 20px);
+            /* Adjusted height */
+            padding: 10px;
+            /* Added padding */
+            box-sizing: border-box;
+            /* Box sizing to include padding in height calculation */
+        }
+
+        .btn-toolbar {
+            margin-right: 10px;
+        }
+
+        .token.tag {
+            color: green !important;
+        }
+
+        .token.attr-name {
+            color: pink !important;
+        }
+
+        .tag {
+            color: green;
+        }
+
+        .attribute {
+            color: pink;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="toolbar">
+        <button class="btn btn-primary btn-toolbar" onclick="formatCode()">Format</button>
+        <button class="btn btn-secondary btn-toolbar" onclick="clearCode()">Clear</button>
+        <button class="btn btn-success btn-toolbar" onclick="openNewTab()">View</button>
+        <button class="btn btn-info btn-toolbar" onclick="downloadHTML()">Download</button>
+    </div>
+
+    <div class="container mt-4">
+        <div id="codeInput" class="code-area">
+            <div class="line-numbers"></div>
+            <!-- Modify your textarea -->
+            <textarea id="codeTextArea" class="form-control language-markup" placeholder="Enter HTML code here..." oninput="updateLineNumbers(); runCode()"></textarea>
+
+        </div>
+        <div id="output" class="border"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function runCode() {
+            const codeInput = document.getElementById("codeTextArea").value;
+            const outputDiv = document.getElementById("output");
+
+            try {
+                const parser = new DOMParser();
+                const parsedDoc = parser.parseFromString(codeInput, "text/html");
+
+                if (parsedDoc.querySelector('parsererror')) {
+                    outputDiv.innerHTML = "<div class='error'>Invalid HTML code.</div>";
+                } else {
+                    outputDiv.innerHTML = codeInput;
+                }
+            } catch (error) {
+                outputDiv.innerHTML = "<div class='error'>An error occurred while parsing the HTML code.</div>";
+            }
+        }
+
+        function formatCode() {
+            const codeInput = document.getElementById("codeTextArea").value;
+            try {
+                // Use js_beautify to format HTML code
+                const formattedCode = js_beautify(codeInput, {
+                    indent_size: 2,
+                    wrap_line_length: 80
+                });
+
+                document.getElementById("codeTextArea").value = formattedCode;
+                updateLineNumbers();
+            } catch (error) {
+                console.error("Error formatting HTML code:", error);
+            }
+        }
+
+        function clearCode() {
+            document.getElementById("codeTextArea").value = "";
+            document.getElementById("output").innerHTML = "";
+            updateLineNumbers();
+        }
+
+        function openNewTab() {
+            const codeInput = document.getElementById("codeTextArea").value;
+            const newTab = window.open();
+            newTab.document.write(codeInput);
+        }
+
+        function downloadHTML() {
+            const codeInput = document.getElementById("codeTextArea").value;
+            const blob = new Blob([codeInput], {
+                type: "text/html"
+            });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "downloaded.html";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function updateLineNumbers() {
+            const codeTextArea = document.getElementById("codeTextArea");
+            const lineNumbersDiv = document.querySelector(".line-numbers");
+            const lines = codeTextArea.value.split('\n');
+            const lineCount = lines.length;
+
+            let lineNumbersHTML = "";
+            for (let i = 1; i <= lineCount; i++) {
+                lineNumbersHTML += `<span>${i}</span>`;
+            }
+
+            lineNumbersDiv.innerHTML = lineNumbersHTML;
+        }
+    </script>
+
+    <!-- External library for HTML code formatting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.min.js"></script>
+
+</body>
+
+</html>
