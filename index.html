@@ -6,60 +6,144 @@
     <title>Jawaxa Ethnics</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	
+	<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #000; /* fallback background for mobile */
+        background: none;
+    }
 
-    <style>
+    @media (min-width: 768px) {
         body {
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-			 background: url('weaving.jpg') no-repeat center center fixed;
-    background-size: cover;
-        }
-        .custom-card {
-            background: url('Media%20(1).jpeg') no-repeat center center;
+            background: url('weaving.jpg') no-repeat center center fixed;
             background-size: cover;
-            border-radius: 20px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-            color: white;
-            padding: 2rem;
-            max-width: 600px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-        .custom-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5); /* dark overlay for text clarity */
-            border-radius: 20px;
+    }
+	
+	 @media (max-width: 768px) {
+        body {
+            background: url('mobile_black_image.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
-        .custom-card * {
-            position: relative;
-            z-index: 1;
+    }
+	
+    .custom-card {
+        background: url('Media%20(1).jpeg') no-repeat center center;
+        background-size: cover;
+        border-radius: 20px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        color: white;
+        padding: 2rem;
+        max-width: 600px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        animation: fadeInUp 1.2s ease;
+    }
+
+    .custom-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+    }
+
+    .custom-card * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .whatsapp-btn {
+        background: #25D366;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 15px;
+        transition: all 0.3s ease-in-out;
+        animation: pulseBtn 1.5s infinite;
+    }
+
+    .whatsapp-btn:hover {
+        transform: scale(1.1);
+        background-color: #1ebe5d;
+        box-shadow: 0 0 12px #25D366;
+    }
+
+    .social-icons a img {
+        width: 24px;
+        margin: 0 8px;
+        transition: transform 0.4s ease, filter 0.3s ease;
+    }
+
+    .social-icons a img:hover {
+        transform: rotate(15deg) scale(1.3);
+        filter: brightness(1.2);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
         }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulseBtn {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width: 767px) {
         .whatsapp-btn {
-            background: #25D366;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 50px;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 15px;
+            animation: bounceIn 1s ease;
         }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            60% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
         .social-icons a img {
-            width: 24px;
-            margin: 0 8px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease-in-out;
         }
+
         .social-icons a img:hover {
-            transform: scale(1.2);
+            transform: scale(1.2) rotate(0deg);
         }
-    </style>
+    }
+</style>
+
+
+  
 </head>
 <body>
 
@@ -70,13 +154,13 @@
     </p>
     <p><strong>Drape a story, embrace tradition — Jawaxa Ethnics.</strong></p>
 
-    <a href="https://wa.me/" class="whatsapp-btn">Shop via WhatsApp</a>
+    <a href="https://wa.me/918438014979?text=Hi%2C%20Jawaxa%20Ethnics"" class="whatsapp-btn" target="_blank">Shop via WhatsApp</a>
 
     <div class="social-icons mt-4">
-        <a href="#"><img src="https://img.icons8.com/ios-glyphs/24/ffffff/facebook-new.png" alt="FB"></a>
-        <a href="#"><img src="https://img.icons8.com/ios-glyphs/24/ffffff/whatsapp.png" alt="WA"></a>
-        <a href="#"><img src="https://img.icons8.com/ios-glyphs/24/ffffff/instagram-new.png" alt="Insta"></a>
-        <a href="#"><img src="https://img.icons8.com/ios-glyphs/24/ffffff/behance.png" alt="Behance"></a>
+        <a href="https://www.facebook.com/share/19MCxQpgGh/" target="_blank"><img src="https://img.icons8.com/ios-glyphs/24/ffffff/facebook-new.png" alt="FB"></a>
+        <a href="https://wa.me/918438014979?text=Hi%2C%20Jawaxa%20Ethnics" target="_blank"><img src="https://img.icons8.com/ios-glyphs/24/ffffff/whatsapp.png" alt="WA"></a>
+        <a href="https://www.instagram.com/jawaxa_ethnics?igsh=emZrNzg1dnE4NXdo" target="_blank"><img src="https://img.icons8.com/ios-glyphs/24/ffffff/instagram-new.png" alt="Insta"></a>
+        <a href="https://pin.it/3iPilDSn8" target="_blank"><img src="https://img.icons8.com/ios-glyphs/24/ffffff/pinterest--v1.png" alt="Pinterest"></a>
     </div>
 </div>
 
