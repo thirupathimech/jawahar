@@ -64,9 +64,7 @@
       padding: 20px;
     }
 
-    .custom-card {
-      background: url('Media%20(1).jpeg') no-repeat center center;
-      background-size: cover;
+    .custom-card {      
       border-radius: 20px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.2);
       color: white;
@@ -147,28 +145,32 @@
       }
     }
 
+/* Mobile css */
     @media (max-width: 767px) {
-      .whatsapp-btn {
-        animation: bounceIn 1.5s infinite;
-      }
-	  
-	  .custom-card {
+		.custom-card::before {
+			background : none;
+		}
+		.whatsapp-btn {
+		animation: bounceIn 1.5s infinite;
+		}
+
+		.custom-card {
 		zoom : 1;
-	  }
+		}
 
-      @keyframes bounceIn {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
-      }
+		@keyframes bounceIn {
+		0% { transform: scale(1); }
+		50% { transform: scale(1.1); }
+		100% { transform: scale(1); }
+		}
 
-      .social-icons a img {
-        transition: transform 0.3s ease-in-out;
-      }
+		.social-icons a img {
+		transition: transform 0.3s ease-in-out;
+		}
 
-      .social-icons a img:hover {
-        transform: scale(1.2) rotate(0deg);
-      }
+		.social-icons a img:hover {
+		transform: scale(1.2) rotate(0deg);
+		}
     }
   </style>
 
