@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jawaxa Ethnics - Shop traditional Tamil silk sarees, handwoven with premium quality since 1977. Discover intricate designs and luxurious heritage sarees online via WhatsApp.">
+    <meta name="keywords" content="Jawaxa Ethnics, Tamil silk sarees, traditional Indian sarees, handwoven sarees, premium sarees, saree shop online, Tamil Nadu sarees">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jawaxa Ethnics">
+    <meta property="og:title" content="Jawaxa Ethnics - Traditional Tamil Silk Sarees">
+    <meta property="og:description" content="Explore handwoven Tamil silk sarees at Jawaxa Ethnics, blending heritage and elegance since 1977. Shop premium sarees online via WhatsApp.">
+    <meta property="og:image" content="https://thirupathimech.github.io/JawaxaEthnics/jawaxa-ethnics-logo.jpg">
+    <meta property="og:url" content="https://thirupathimech.github.io/JawaxaEthnics/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jawaxa Ethnics - Traditional Tamil Silk Sarees">
+    <meta name="twitter:description" content="Discover premium handwoven Tamil silk sarees at Jawaxa Ethnics. Shop online via WhatsApp today!">
+    <meta name="twitter:image" content="https://thirupathimech.github.io/JawaxaEthnics/jawaxa-ethnics-logo.jpg">
+    
+    <title>Jawaxa Ethnics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="logo_jawa.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --pure-white: #ffffff;
+        --deep-black: #000000;
+        --dark-grey: #1a1a1a;
+        --medium-grey: #333333;
+        --light-grey: #666666;
+        --ghost-white: rgba(255, 255, 255, 0.1);
+        --shadow-black: rgba(0, 0, 0, 0.8);
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #000000;
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+        color: var(--pure-white);
+    }
+
+    /* Dramatic animated background */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+            linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.01) 50%, transparent 60%);
+        animation: dramaticFlow 25s ease-in-out infinite;
+        z-index: -1;
+    }
+
+    @keyframes dramaticFlow {
+        0%, 100% { 
+            transform: scale(1) rotate(0deg);
+            opacity: 0.7;
+        }
+        25% { 
+            transform: scale(1.1) rotate(1deg);
+            opacity: 1;
+        }
+        50% { 
+            transform: scale(0.95) rotate(-1deg);
+            opacity: 0.8;
+        }
+        75% { 
+            transform: scale(1.05) rotate(0.5deg);
+            opacity: 0.9;
+        }
+    }
+
+    /* Geometric line animations */
+    .geometric-lines {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .line {
+        position: absolute;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        animation: geometricMove 12s linear infinite;
+    }
+
+    .line-horizontal {
+        width: 200px;
+        height: 1px;
+        top: 20%;
+        left: -200px;
+        animation: slideHorizontal 15s linear infinite;
+    }
+
+    .line-vertical {
+        width: 1px;
+        height: 150px;
+        right: 10%;
+        top: -150px;
+        background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: slideVertical 20s linear infinite;
+    }
+
+    .line-diagonal {
+        width: 300px;
+        height: 1px;
+        top: 60%;
+        right: -300px;
+        transform: rotate(45deg);
+        animation: slideDiagonal 18s linear infinite;
+    }
+
+    @keyframes slideHorizontal {
+        0% { left: -200px; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { left: 100%; opacity: 0; }
+    }
+
+    @keyframes slideVertical {
+        0% { top: -150px; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+    }
+
+    @keyframes slideDiagonal {
+        0% { right: -300px; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { right: 100%; opacity: 0; }
+    }
+
+    /* Enhanced logo with dramatic styling */
+    .logo-container {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+        padding: 20px;
+        box-shadow: 
+            0 10px 40px rgba(0, 0, 0, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        animation: logoEntrance 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .logo-img-top {
+        width: 100px;
+        height: auto;
+        filter: 
+            drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))
+            contrast(1.2)
+            brightness(1.1);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .logo-container:hover .logo-img-top {
+        transform: scale(1.15);
+        filter: 
+            drop-shadow(0 0 30px rgba(255, 255, 255, 0.6))
+            contrast(1.4)
+            brightness(1.3);
+    }
+
+    @keyframes logoEntrance {
+        0% {
+            opacity: 0;
+            transform: translateX(-50%) translateY(-50px) scale(0.5);
+        }
+        50% {
+            transform: translateX(-50%) translateY(-10px) scale(1.1);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0) scale(1);
+        }
+    }
+
+    /* Main container with dramatic presentation */
+    .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 200px 20px 50px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .custom-card {
+        background: 
+            linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.95) 0%, 
+                rgba(26, 26, 26, 0.9) 50%, 
+                rgba(0, 0, 0, 0.95) 100%);
+        backdrop-filter: blur(30px);
+        border-image: linear-gradient(45deg, 
+            rgba(255, 255, 255, 0.1) 0%, 
+            rgba(255, 255, 255, 0.6) 50%, 
+            rgba(255, 255, 255, 0.1) 100%) 1;
+        border-radius: 40px;
+        box-shadow: 
+            0 40px 80px rgba(0, 0, 0, 0.8),
+            inset 0 2px 0 rgba(255, 255, 255, 0.1),
+            0 0 100px rgba(255, 255, 255, 0.05);
+        color: var(--pure-white);
+        padding: 4rem 3rem;
+        max-width: 750px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        animation: cardEntrance 2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
+    }
+
+    /* Epic shine effect */
+    .custom-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, 
+            transparent 40%, 
+            rgba(255, 255, 255, 0.1) 45%, 
+            rgba(255, 255, 255, 0.3) 50%, 
+            rgba(255, 255, 255, 0.1) 55%, 
+            transparent 60%);
+        animation: epicShine 4s ease-in-out infinite;
+        z-index: -1;
+    }
+
+    @keyframes epicShine {
+        0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    }
+
+    @keyframes cardEntrance {
+        0% {
+            opacity: 0;
+            transform: translateY(100px) scale(0.8) rotateX(20deg);
+        }
+        60% {
+            transform: translateY(-10px) scale(1.02) rotateX(-2deg);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0deg);
+        }
+    }
+
+    /* Killer typography */
+    .custom-card h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.8rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, 
+            #ffffff 0%, 
+            #f0f0f0 25%, 
+            #ffffff 50%, 
+            #e0e0e0 75%, 
+            #ffffff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        letter-spacing: -0.02em;
+        animation: textGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes textGlow {
+        0% { 
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+        }
+        100% { 
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+        }
+    }
+
+    .custom-card p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .custom-card p strong {
+        color: #ffffff;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 1.1em;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Insane WhatsApp button */
+    .whatsapp-btn {
+        background: linear-gradient(135deg, #25D366 0%, #1ebe5d 50%, #128C7E 100%);
+        border: none;
+        padding: 20px 45px;
+        border-radius: 60px;
+        color: white;
+        font-weight: 700;
+        font-size: 1.2rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        margin: 2.5rem 0;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 
+            0 15px 35px rgba(37, 211, 102, 0.4),
+            inset 0 2px 0 rgba(255, 255, 255, 0.2),
+            0 0 0 3px rgba(255, 255, 255, 0.1);
+        animation: btnEntrance 1.5s cubic-bezier(0.4, 0, 0.2, 1) 1.5s both;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .whatsapp-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(255, 255, 255, 0.4), 
+            transparent);
+        transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .whatsapp-btn::after {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        background: linear-gradient(45deg, 
+            transparent, 
+            rgba(255, 255, 255, 0.3), 
+            transparent);
+        border-radius: 60px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+
+    .whatsapp-btn:hover {
+        transform: translateY(-8px) scale(1.08);
+        box-shadow: 
+            0 25px 50px rgba(37, 211, 102, 0.6),
+            inset 0 2px 0 rgba(255, 255, 255, 0.3),
+            0 0 0 5px rgba(255, 255, 255, 0.2);
+        color: white;
+        text-decoration: none;
+    }
+
+    .whatsapp-btn:hover::before {
+        left: 100%;
+    }
+
+    .whatsapp-btn:hover::after {
+        opacity: 1;
+    }
+
+    .whatsapp-btn i {
+        font-size: 1.5rem;
+        animation: whatsappSpin 3s linear infinite;
+    }
+
+    @keyframes btnEntrance {
+        0% {
+            opacity: 0;
+            transform: translateY(50px) scale(0.8);
+        }
+        60% {
+            transform: translateY(-5px) scale(1.05);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    @keyframes whatsappSpin {
+        0% { transform: rotate(0deg) scale(1); }
+        25% { transform: rotate(5deg) scale(1.1); }
+        50% { transform: rotate(0deg) scale(1); }
+        75% { transform: rotate(-5deg) scale(1.1); }
+        100% { transform: rotate(0deg) scale(1); }
+    }
+
+    /* Sick social icons */
+    .social-icons {
+        margin-top: 2.5rem;
+        animation: socialEntrance 1.5s cubic-bezier(0.4, 0, 0.2, 1) 1.8s both;
+    }
+
+    .social-icons a {
+        display: inline-block;
+        margin: 0 15px;
+        width: 60px;
+        height: 60px;
+        background: 
+            linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                rgba(255, 255, 255, 0.05) 50%, 
+                rgba(255, 255, 255, 0.1) 100%);
+        border-radius: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .social-icons a::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg, 
+            transparent, 
+            rgba(255, 255, 255, 0.3), 
+            transparent);
+        opacity: 0;
+        transition: all 0.4s ease;
+        z-index: -1;
+    }
+
+    .social-icons a::after {
+        content: '';
+        position: absolute;
+        inset: -3px;
+        background: linear-gradient(45deg, 
+            rgba(255, 255, 255, 0.1), 
+            rgba(255, 255, 255, 0.3), 
+            rgba(255, 255, 255, 0.1));
+        border-radius: 23px;
+        opacity: 0;
+        filter: blur(2px);
+        transition: opacity 0.4s ease;
+        z-index: -2;
+    }
+
+    .social-icons a:hover::before {
+        opacity: 1;
+    }
+
+    .social-icons a:hover::after {
+        opacity: 1;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-10px) scale(1.2) rotate(10deg);
+        box-shadow: 
+            0 20px 40px rgba(0, 0, 0, 0.3),
+            inset 0 2px 0 rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .social-icons a img {
+        width: 28px;
+        height: 28px;
+        filter: brightness(0) invert(1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .social-icons a:hover img {
+        transform: scale(1.2) rotate(-10deg);
+        filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+    }
+
+    @keyframes socialEntrance {
+        0% {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Mobile optimizations - keeping it mass */
+    @media (max-width: 768px) {
+        .logo-container {
+            top: 20px;
+            padding: 15px;
+        }
+
+        .logo-img-top {
+            width: 80px;
+        }
+
+        .center-container {
+            padding: 150px 15px 30px;
+        }
+
+        .custom-card {
+            padding: 2.5rem 2rem;
+            margin: 0 10px;
+            border-radius: 30px;
+        }
+
+        .custom-card h4 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .whatsapp-btn {
+            padding: 16px 35px;
+            font-size: 1.1rem;
+        }
+
+        .social-icons a {
+            width: 55px;
+            height: 55px;
+            margin: 0 10px;
+        }
+
+        .line {
+            display: none;
+        }
+    }
+
+    /* Epic hover effect for the card */
+    .custom-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 
+            0 60px 120px rgba(0, 0, 0, 0.9),
+            inset 0 2px 0 rgba(255, 255, 255, 0.2),
+            0 0 150px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Breathing effect */
+    @keyframes breathe {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+    }
+
+    .custom-card {
+        animation: breathe 6s ease-in-out infinite;
+    }
+
+    /* Glitch effect on title hover */
+    .custom-card h4:hover {
+        animation: glitch 0.5s ease-in-out;
+    }
+
+    @keyframes glitch {
+        0% { transform: translate(0); }
+        10% { transform: translate(-2px, 1px); }
+        20% { transform: translate(1px, -1px); }
+        30% { transform: translate(-1px, 1px); }
+        40% { transform: translate(1px, 1px); }
+        50% { transform: translate(-1px, -1px); }
+        60% { transform: translate(1px, -1px); }
+        70% { transform: translate(-1px, 1px); }
+        80% { transform: translate(1px, 1px); }
+        90% { transform: translate(-1px, -1px); }
+        100% { transform: translate(0); }
+    }
+</style>
+</head>
+
+<body>
+    <!-- Geometric line animations -->
+    <div class="geometric-lines">
+        <div class="line line-horizontal"></div>
+        <div class="line line-vertical"></div>
+        <div class="line line-diagonal"></div>
+    </div>
+
+    <!-- Epic Logo -->
+    <div class="logo-container">
+        <img src="brand_logo.png" alt="Jawaxa Ethnics Logo" class="logo-img-top">
+    </div>
+
+    <!-- Main Content -->
+    <div class="center-container">
+        <div class="custom-card">
+            <h4>Jawaxa Ethnics – Weaving Heritage into Every Thread</h4>
+            <p>
+                Since 1977, our family has been deeply rooted in the art of weaving. At Jawaxa Ethnics, we blend generations of craftsmanship with modern elegance, curating sarees that honor India's rich textile heritage. With premium quality, intricate designs, and a luxurious feel, each saree carries a story of tradition and artistry.
+            </p>
+            <p><strong>Drape a story, embrace tradition — Jawaxa Ethnics.</strong></p>
+
+            <a href="https://wa.me/918438014979?text=Hi%2C%20Jawaxa%20Ethnics" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> 
+                <span>Shop via WhatsApp</span>
+            </a>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/19MCxQpgGh/" target="_blank" title="Facebook">
+                    <img src="https://img.icons8.com/ios-glyphs/24/ffffff/facebook-new.png" alt="Facebook">
+                </a>
+                <a href="https://youtube.com/@jawaxaethnics?si=OZYVQhRixuT4k1lL" target="_blank" title="YouTube">
+                    <img src="https://img.icons8.com/ios-glyphs/24/ffffff/youtube.png" alt="YouTube">
+                </a>
+                <a href="https://www.instagram.com/jawaxa_ethnics?igsh=emZrNzg1dnE4NXdo" target="_blank" title="Instagram">
+                    <img src="https://img.icons8.com/ios-glyphs/24/ffffff/instagram-new.png" alt="Instagram">
+                </a>
+                <a href="https://pin.it/3iPilDSn8" target="_blank" title="Pinterest">
+                    <img src="https://img.icons8.com/ios-glyphs/24/ffffff/pinterest--v1.png" alt="Pinterest">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Epic entrance animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Stagger social icon animations for mass effect
+            const socialIcons = document.querySelectorAll('.social-icons a');
+            socialIcons.forEach((icon, index) => {
+                icon.style.animationDelay = `${2 + (index * 0.15)}s`;
+                icon.style.animationName = 'socialEntrance';
+                icon.style.animationDuration = '1s';
+                icon.style.animationFillMode = 'both';
+            });
+        });
+
+        // Sick parallax mouse effect
+        document.addEventListener('mousemove', (e) => {
+            const card = document.querySelector('.custom-card');
+            const logo = document.querySelector('.logo-container');
+            
+            if (window.innerWidth > 768) {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 30;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 30;
+                
+                card.style.transform = `
+                    translateY(-10px) 
+                    rotateY(${xAxis}deg) 
+                    rotateX(${yAxis}deg) 
+                    scale(1.02)
+                `;
+                
+                logo.style.transform = `
+                    translateX(-50%) 
+                    translateX(${xAxis * 2}px) 
+                    translateY(${yAxis}px)
+                `;
+            }
+        });
+
+        // Reset positions when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            const card = document.querySelector('.custom-card');
+            const logo = document.querySelector('.logo-container');
+            
+            if (window.innerWidth > 768) {
+                card.style.transform = 'translateY(-10px) rotateY(0deg) rotateX(0deg) scale(1.02)';
+                logo.style.transform = 'translateX(-50%) translateX(0) translateY(0)';
+            }
+        });
+
+        // Add click ripple effect
+        document.querySelectorAll('.whatsapp-btn, .social-icons a').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, transparent 70%);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    z-index: 10;
+                `;
+                
+                this.style.position = 'relative';
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
